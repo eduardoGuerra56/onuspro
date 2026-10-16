@@ -1,0 +1,18 @@
+extends layouts/main-layout.pug
+
+block content
+    if !profileUser
+        span.errorMessage Confirme se o link que está acessando existe.
+    else
+        script.
+            var profileUserId = '!{profileUser._id}';
+            var selectedTab = '!{selectedTab}';
+
+        .tabsContainer
+            +createTab("Seguindo", `/profile/${profileUser.username}/following`, selectedTab != "followers")
+            +createTab("Seguidores", `/profile/${profileUser.username}/followers`, selectedTab == "followers")
+
+        .resultsContainer  
+
+block scripts
+    script(src="/js/followersAndFollowing.js")

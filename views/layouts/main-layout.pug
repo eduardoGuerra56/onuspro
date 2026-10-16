@@ -1,0 +1,52 @@
+include ../mixins/mixins
+
+doctype html
+html(lang="pt-BR")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{pageTitle}
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD', crossorigin='anonymous')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css" integrity="sha512-hvNR0F/e2J7zPPfLC9auFe3/SE0yG4aJCOd/qxew74NN7eyiSKjr7xJJMu1Jy2wf7FXITpWS1E/RY8yzuXN7VA==" crossorigin="anonymous" referrerpolicy="no-referrer")
+        link(rel="stylesheet", href="/css/main.css")
+
+    body 
+        script.
+            var userLoggedIn = !{userLoggedInJs};
+        .wrapper
+            .row 
+                nav.col-2
+                    a.userImageContainer(href="/") 
+                        img(src='images/logo.png')
+                    a(href="/") 
+                        i.fas.fa-house
+                    a(href="/search") 
+                        i.fas.fa-search.text-decoration-none 
+                    a(href="/notifications") 
+                        i.fas.fa-bell
+                    a(href="/messages") 
+                        i.fas.fa-envelope
+                    a(href="/profile") 
+                        i.fas.fa-user
+                    a(href="/logout") 
+                        i.fas.fa-sign-out-alt
+                .mainSectionContainer.col-10.col-md-8.col-lg-6
+                    .titleContainer 
+                        h1 #{pageTitle}
+                        block headerButton 
+                        
+                    block content 
+                .d-none.d-md-block.col-1.md-2.col-lg-1
+                    
+
+        script(src='https://kit.fontawesome.com/48f3e6b09a.js' crossorigin='anonymous')
+        script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js', integrity='sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3', crossorigin='anonymous')
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js', integrity='sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD', crossorigin='anonymous')
+        script(src='https://code.jquery.com/jquery-3.6.3.min.js', integrity='sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=', crossorigin='anonymous')
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js" integrity="sha512-9KkIqdfN7ipEW6B6k+Aq20PV31bjODg4AA52W+tYtAE0jE0kMx49bjJ3FgvS56wzmyfMUHbQ4Km2b7l9+Y/+Eg==" crossorigin="anonymous" referrerpolicy="no-referrer")
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', integrity='sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6', crossorigin='anonymous')
+
+        block  scripts
+
+        script(src="/js/common.js")
