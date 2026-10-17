@@ -1,4 +1,4 @@
-# ONUSPRO – Integrando Sonhos
+# ONUSPRO – Integrando Sonhos (TODO CODIGO FOI FEITO POR MIM EDUARDO GUERRA, O CLAUDE FOI USADO APENAS PARA REALIZAR O UPLOAD E ORGANIZAR AS INFORMAÇÕES).
 
 > Rede social que conecta jogadores amadores de eSports a organizações e recrutadores.
 > Projeto desenvolvido como **Trabalho de Conclusão de Curso** do Bacharelado em Sistemas de Informação (Faculdade Projeção, 2024).
